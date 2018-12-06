@@ -1,0 +1,18 @@
+{
+  "name": "mongo_stream_sync",
+  "version": "1.0.0",
+  "description": "server to sync between mongo and elasticsearch based on mongo stream",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "yaojian wang",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "elasticsearch": "^15.2.0",
+    "express": "^4.16.4",
+    "json-patch": "^0.7.0",
+    "service-logger": "^1.0.3"
+  }
+}

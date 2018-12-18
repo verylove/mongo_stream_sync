@@ -4,6 +4,7 @@
   "description": "server to sync between mongo and elasticsearch based on mongo stream",
   "main": "server.js",
   "scripts": {
+    "start": "node server.mjs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "yaojian wang",

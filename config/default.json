@@ -1,0 +1,36 @@
+{
+    "mongo": {
+      "options": {
+        "poolSize": 100
+      },
+      "url": "localhost:27017",
+      "database": "test",
+      "user": "admin",
+      "collections": ["test"]
+    },
+    "elasticsearch": {
+      "host": "localhost:9200",
+      "apiVersion": "2.4"
+    },
+    "bulkSize": 1000,
+    "adminPort": 3000,
+    "ignoreResumeTokensOnStart": false,
+    "dumpOnStart": false,
+    "resumeTokenInterval": 60000,
+    "resumeTokenCollection": "resumeToken",
+    "dumpProgressCollection": "dumpProgress",
+    "mappings": {
+      "childCollectionName": {
+        "index": "test",
+        "type": "$self",
+        "parent": "parentCollectionName",
+        "parentId": "childFieldPointingToParent",
+        "versionType": "elasticSearchVersionType",
+        "versionField": "fieldNameToUseForVersioning",
+        "transformations": [ 
+          { "op": "move", "from": "/hello", "path": "/transformed" }
+        ]
+      }
+    },
+    "logLevel": "info"
+  }

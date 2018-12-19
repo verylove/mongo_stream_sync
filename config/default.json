@@ -1,9 +1,10 @@
 {
     "mongo": {
       "options": {
-        "poolSize": 100
+        "poolSize": 100,
+        "useNewUrlParser": true
       },
-      "url": "localhost:27017",
+      "url": "mongodb://localhost:27017",
       "database": "test",
       "user": "admin",
       "collections": ["test"]

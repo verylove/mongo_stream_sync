@@ -1,14 +1,14 @@
-import express from 'express'
-import { json } from 'body-parser'
-import MongoStream from './lib/mongo-stream'
-import CollectionManager from './lib/collectionManager'
-import config from './lib/configParser'
+const express = require('express')
+const bodyParser = require('body-parser')
+const MongoStream = require('./lib/mongoStream')
+const CollectionManager = require('./lib/collectionManager')
+const config = require('./lib/configParser')
 
 const logger = new (require('service-logger'))(__filename)
 let mongoStream
 
 const app = express()
-app.use(json()) // for parsing application/json
+app.use(bodyParser.json()) // for parsing application/json
 
 // return the status of all collectionManagers currently running
 app.get('/', (request, response) => {
@@ -84,7 +84,6 @@ app.listen(config.adminPort, (err) => {
   if (err) {
     return logger.error(`Error listening on ${config.adminPort}:`, err)
   }
-
   MongoStream.init(config)
     .then((stream) => {
       logger.info('connected')

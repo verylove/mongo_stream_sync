@@ -4,10 +4,10 @@
         "poolSize": 100,
         "useNewUrlParser": true
       },
-      "url": "localhost:27017",
-      "database": "test",
+      "url": "localhost:27011",
+      "database": "refresh_tmp_db",
       "user": "",
-      "collections": ["test"]
+      "collections": ["Product"]
     },
     "elasticsearch": {
       "host": "localhost:9200",
@@ -21,16 +21,11 @@
     "resumeTokenCollection": "resumeToken",
     "dumpProgressCollection": "dumpProgress",
     "mappings": {
-      "childCollectionName": {
-        "index": "test",
-        "type": "$self",
-        "parent": "parentCollectionName",
-        "parentId": "childFieldPointingToParent",
-        "versionType": "elasticSearchVersionType",
-        "versionField": "fieldNameToUseForVersioning",
-        "transformations": [ 
-          { "op": "move", "from": "/hello", "path": "/transformed" }
-        ]
+      "Product": {
+        "index": "product-index",
+        "type": "product",
+        "versionType": "external",
+        "versionField": "updatedAt"
       }
     },
     "logLevel": "info"

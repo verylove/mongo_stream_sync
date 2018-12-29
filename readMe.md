@@ -1,3 +1,4 @@
+mongoDB replica set reference by following url
 https://blog.ruanbekker.com/blog/2017/08/27/setup-a-local-mongodb-development-3-member-replica-set/
 
 mkdir -p ./mongodb/rs0-0 ./mongodb/rs0-1 ./mongodb/rs0-2

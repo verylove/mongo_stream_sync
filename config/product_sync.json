@@ -4,7 +4,7 @@
         "poolSize": 100,
         "useNewUrlParser": true
       },
-      "url": "localhost:27011",
+      "url": "localhost:27012",
       "database": "refresh_tmp_db",
       "user": "",
       "collections": ["Product"]
@@ -25,7 +25,15 @@
         "index": "product-index",
         "type": "product",
         "versionType": "external",
-        "versionField": "updatedAt"
+        "versionField": "_updated_at",
+        "transformFunc": {
+            "necessary": [],
+            "unnecessary": [
+                "modifiedImageFile", "productUrl", "imageUrlsSmall", "thumbImageUrl", "rank", "dimensions", "isAvailableUpdatedAt",
+                "_wperm", "_rperm", "_acl", "_created_at", "processedImageUrls", "address", "keywords", "brandName",
+                "dimensionsString", "subCategory", "imageUrls", "colorValue", "_id", "_updated_at", "status", "updatedScript", "navList"
+            ]
+        }
       }
     },
     "logLevel": "info"
